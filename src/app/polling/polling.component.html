@@ -1,0 +1,45 @@
+<div *ngIf = "!isVoted" >
+    <div class="list row">
+    
+        <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input
+            type="text"
+            class="form-control"
+            placeholder="Search by Name"
+            [(ngModel)]="name"
+            />
+            <div class="input-group-append">
+            <button
+                class="btn btn-outline-secondary"
+                type="button"
+                (click)="searchName()"
+            >
+                Search
+            </button>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <h4>Candidate List</h4>
+        <ul class="list-group">
+            <li
+            class="list-group-item"
+            *ngFor="let candidate of candidates; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveCandidate(candidate, i)"
+            >
+            <div class="row">  
+                <div class="col">{{ candidate.name }}</div>
+                <div class="col">
+                    <button type="button" class="badge badge-success" (click)="updateCandidate(candidate)">
+                        Vote
+                    </button>
+                </div>
+            </div>
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+<div *ngIf="isVoted"> {{message}} </div>

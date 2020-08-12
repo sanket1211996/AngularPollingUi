@@ -1,0 +1,69 @@
+<div *ngIf="currentCandidate" class="edit-form">
+    <h4>Candidate</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Candidate Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="currentCandidate.name"
+          name="name"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="numChallenge">Number of Challenges:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="numChallenge"
+          required
+          [(ngModel)]="currentCandidate.numChallenge"
+          name="numChallenge"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="expLevel">Candidate Expertise Level</label>
+        <input
+          type="number"
+          class="form-control"
+          id="expLevel"
+          required
+          [(ngModel)]="currentCandidate.expLevel"
+          name="expLevel"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="expertise">Expert In</label>
+        <input
+          type="text"
+          class="form-control"
+          id="expertise"
+          required
+          [(ngModel)]="currentCandidate.expertise"
+          name="expertise"
+        />
+      </div>
+    </form>
+    <button class="badge badge-danger mr-2" (click)="deleteCandidate()">
+      Delete
+    </button>
+  
+    <button type="submit" class="badge badge-success" (click)="updateCandidate()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <button class="m-3 btn btn-sm btn-danger" (click) = "candidateList()">
+    Show Candidate List
+  </button>
+  
+  <div *ngIf="!currentCandidate">
+    <br />
+    <p>Cannot access this Candidate...</p>
+  </div>
