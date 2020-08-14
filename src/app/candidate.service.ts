@@ -41,7 +41,7 @@ export class CandidateService {
   
   authAdmin(authKey) {
     console.log("AUTHKEY: " + authKey);
-    return this.http.post(`http://localhost:8080/api/adminAuth`,authKey)
+    return this.http.post(`http://testspringboot-env.eba-2yjx3g5r.us-east-2.elasticbeanstalk.com/api/adminAuth`,authKey)
   }
 
 }
