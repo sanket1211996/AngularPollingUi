@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 
-const baseUrl = 'http://localhost:8080/api/candidates';
+const baseUrl = 'http://testspringboot-env.eba-2yjx3g5r.us-east-2.elasticbeanstalk.com/candidates';
 
 @Injectable({
   providedIn: 'root'
